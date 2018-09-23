@@ -48,7 +48,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "lodash": "^4.17.4"
+    "class-transformer": "^0.1.9",
+    "lodash": "^4.17.4",
+    "reflect-metadata": "^0.1.12"
   },
   "repository": "git@github.com:UintaGroup/bunnycdn-sdk.git",
   "author": "Stone C. Lasley <stonelasley@gmail.com>"

@@ -1,14 +1,12 @@
-import { MyLibrary } from './MyLibrary';
-import { Bunny } from './clients/bunny';
+//@format
+import {Bunny} from './clients/bunny.client';
+import {PullZone} from './models/pullzone';
 
-console.log('See this in your browser console: Typescript Webpack Starter Launched');
-
-const myLibrary = new MyLibrary();
-const result = myLibrary.executeDependency();
 const bunny = new Bunny();
 
+let pz = new PullZone('anotherpullzoneuinta', 'https://uintatesturl.com');
+//bunny.pullZone.create(pz);
 
-bunny.pullzones()
-    .then(res => console.log('PULLZONES', res));
+bunny.pullZone.get().then(res => console.log('PULLZONES', res));
 
-console.log(`A random number ${result}`);
+//bunny.pullZone.get(46805).then(res => console.log('PULLZONE', res));

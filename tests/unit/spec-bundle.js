@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 Error.stackTraceLimit = Infinity;
 
 var testContext = require.context('./../../src', true, /\.spec\.ts/);

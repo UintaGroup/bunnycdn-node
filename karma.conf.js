@@ -34,13 +34,17 @@ module.exports = function(config) {
       Chrome_travis_ci: {
         base: 'Chrome',
         flags: ['--no-sandbox']
+      },
+      Chrome_incog: {
+        base: 'Chrome',
+        flags: ['--no-sandbox --incognito']
       }
     },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['Chrome_incog'],
     singleRun: true,
     concurrency: Infinity
   });
