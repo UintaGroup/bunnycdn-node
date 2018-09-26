@@ -1,4 +1,5 @@
 //@format
+
 import 'reflect-metadata';
 import axios from 'axios';
 import {PullZoneClient} from './pullzone.client';
@@ -24,11 +25,11 @@ export class Bunny extends HttpBase {
   }
 
   statistics(): Promise<Statistic[]> {
-    return super.fetch(`${Resource.Statistic}`).then(response => plainToClass(Statistic, response.data));
+    return super.fetch(Resource.Statistic).then(response => plainToClass(Statistic, response.data));
   }
 
   billing(): Promise<Billing[]> {
-    return super.fetch(`${Resource.Billing}`).then(response => plainToClass(Billing, response.data));
+    return super.fetch(Resource.Billing).then(response => plainToClass(Billing, response.data));
   }
 
   applyCode(couponCode: string): Promise<Billing> {
