@@ -23,7 +23,7 @@ module.exports = function(config) {
       showSpecTiming: true // print the time elapsed for each spec
     },
     coverageIstanbulReporter: {
-      reports: ['html', 'lcov', 'text-summary'],
+      reports: ['html', 'lcov', 'json', 'text-summary'],
       dir: './tests/coverage', // coverage results needs to be saved under coverage/
       fixWebpackSourcePaths: true,
       query: {
