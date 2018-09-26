@@ -73,7 +73,7 @@ export class PullZoneClient extends HttpBase {
   }
 
   loadFreeCertificate(hostName: string): Promise<void> {
-    return super.fetch(`${Resource.PullZone}/loadFreeCertificate?host?hostname=${hostName}`);
+    return super.fetch(`${Resource.PullZone}/loadfreecertificate?hostname=${hostName}`);
   }
 
   deleteHostname(id: number, hostName: string): Promise<void> {
@@ -82,9 +82,5 @@ export class PullZoneClient extends HttpBase {
 
   purge(pullZoneId: number): Promise<void> {
     return super.post(`${Resource.PullZone}/${pullZoneId}/purgeCache`, null);
-  }
-
-  delete(id: number): Promise<void> {
-    return super.del(`${Resource.PullZone}/${id}/purgeCache`, null);
   }
 }
