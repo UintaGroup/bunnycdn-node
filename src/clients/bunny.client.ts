@@ -8,6 +8,7 @@ import {Statistic} from '../models/statistic';
 import {Billing} from '../models/billing';
 import {Resource} from '../config/resource.enum';
 import {plainToClass} from 'class-transformer';
+import {StorageClient} from './storage.client';
 
 const config = {
   baseURL: 'https://bunnycdn.com/api/',
@@ -19,9 +20,15 @@ export class Bunny extends HttpBase {
     return this._pullZoneClient;
   }
 
+  private _storageClient: StorageClient;
+  public get storage(): StorageClient {
+    return this._storageClient;
+  }
+
   constructor(httpClient?: any) {
     super(httpClient || axios, config);
     this._pullZoneClient = new PullZoneClient(config, httpClient || axios);
+    this._storageClient = new StorageClient(httpClient || axios);
   }
 
   statistics(): Promise<Statistic[]> {
