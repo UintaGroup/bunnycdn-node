@@ -1,5 +1,6 @@
 // @format
-import { Type, classToPlain } from 'class-transformer';
+import { classToPlain } from 'class-transformer';
+import { Type } from 'class-transformer/decorators';
 import { Host } from './host';
 
 export class PullZone {

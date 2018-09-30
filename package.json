@@ -1,6 +1,6 @@
 {
   "name": "bunnycdn-node",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/bunnycdn-node.umd.js",
   "module": "dist/bunnycdn-node.es5.js",
   "typings": "dist/types/bunnycdn-node.d.ts",
