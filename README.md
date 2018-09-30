@@ -33,7 +33,7 @@ const bunny = new Bunny();
 
 All files in Storage Zone
 ``` javascript
-const files: StorageZone[] = await bunny.storage.get('mystoragezone');
+const files: StorageZoneFile[] = await bunny.storage.get('mystoragezone');
 ```
 
 Contents of specific file

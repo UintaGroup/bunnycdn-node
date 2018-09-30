@@ -3,16 +3,16 @@ import { AxiosResponse } from 'axios';
 import { plainToClass } from 'class-transformer';
 import { HttpBase } from './http-base.client';
 import { Resource, ClientType } from '../enums';
-import { Statistic, Billing, StorageZone } from '../models';
+import { Statistic, Billing, StorageZoneFile } from '../models';
 
 export class StorageClient extends HttpBase {
   constructor(httpClient?: any) {
     super(httpClient, ClientType.Storage);
   }
 
-  async get(storageZone: string): Promise<StorageZone | StorageZone[]> {
+  async get(storageZone: string): Promise<StorageZoneFile | StorageZoneFile[]> {
     const response: AxiosResponse = await super.fetch(`${storageZone}/`);
-    return plainToClass(StorageZone, response.data);
+    return plainToClass(StorageZoneFile, response.data);
   }
 
   async getFile(filePath: string): Promise<string> {

@@ -1,5 +1,5 @@
 // @format
-export class StorageZone {
+export class StorageZoneFile {
   failIndex: number = 0;
   guid: string = '';
   storageZoneName: string = '';

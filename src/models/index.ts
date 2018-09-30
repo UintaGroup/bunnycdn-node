@@ -4,4 +4,4 @@ export * from './host';
 export * from './occurance-by-date';
 export * from './pullzone';
 export * from './statistic';
-export * from './storagezone';
+export * from './storage-zone-file';
