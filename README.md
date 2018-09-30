@@ -50,3 +50,20 @@ Delete specific file
 ``` javascript
 bunny.storage.delete('mystorage/somepath/afile.js');
 ```
+
+#### Bunny API
+
+Get Billing 
+``` javascript
+const billing: Billing = await bunny.billing();
+```
+
+Get Statistics
+``` javascript
+const stats : Statistic = await bunny.statistics();
+```
+
+Purge File Cache
+``` javascript
+await bunny.purge('http://my-zone/mypath/filetopurge.css');
+```
