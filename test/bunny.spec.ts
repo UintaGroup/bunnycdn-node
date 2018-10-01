@@ -21,6 +21,29 @@ describe('Bunny', () => {
     expect(classUnderTest).toBeDefined();
   });
 
+  it('should default to axios as HttpClient', () => {
+    const bunny = new Bunny();
+    expect(bunny['httpClient']).toEqual(axios);
+  });
+
+  it('should use injected HttpClient', () => {
+    const someHttpClient = {};
+    const bunny = new Bunny(someHttpClient);
+    expect(bunny['httpClient']).toEqual(someHttpClient);
+  });
+
+  it('should pass httpClient to Child Clients', () => {
+    const bunny = new Bunny();
+    expect(bunny.storage['httpClient']).toEqual(axios);
+    expect(bunny.pullZone['httpClient']).toEqual(axios);
+  });
+
+  it('should use injected HttpClient', () => {
+    const someHttpClient = {};
+    const bunny = new Bunny(someHttpClient);
+    expect(bunny.storage['httpClient']).toEqual(someHttpClient);
+    expect(bunny.pullZone['httpClient']).toEqual(someHttpClient);
+  });
   describe('statistics', () => {
     beforeEach(() => {
       jest
