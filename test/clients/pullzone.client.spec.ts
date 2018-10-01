@@ -24,6 +24,42 @@ describe('PullzoneClient', () => {
     expect(classUnderTest).toBeDefined();
   });
 
+  describe('loadFreeCertificate', () => {
+    beforeEach(() => {
+      jest
+        .spyOn(axios, 'get')
+        .mockReturnValueOnce(Promise.resolve({ data: {} }));
+    });
+
+    it('should GET all pullzones', done => {
+      classUnderTest.get().then(() => {
+        expect(axios.get).toHaveBeenCalledWith(
+          Resource.PullZone,
+          validateConfig,
+        );
+        done();
+      });
+    });
+
+    it('should GET pullzones by Id', done => {
+      const pullZoneId = 1234;
+      classUnderTest.get(pullZoneId).then(() => {
+        expect(axios.get).toHaveBeenCalledWith(
+          `${Resource.PullZone}/${pullZoneId}`,
+          validateConfig,
+        );
+        done();
+      });
+    });
+
+    it('should return PullZone', done => {
+      classUnderTest.get().then(result => {
+        expect(result instanceof PullZone).toBe(true);
+        done();
+      });
+    });
+  });
+
   describe('create', () => {
     beforeEach(() => {
       jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
