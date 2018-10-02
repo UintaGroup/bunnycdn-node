@@ -65,5 +65,10 @@ const stats : Statistic = await bunny.statistics();
 
 Purge File Cache
 ``` javascript
-await bunny.purge('http://my-zone/mypath/filetopurge.css');
+bunny.purge('http://my-zone/mypath/filetopurge.css');
+```
+
+HardUpdate File (Update and Purge)
+``` javascript
+bunny.hardUpdate('http://my-zone/mypath/filetopurge.css', 'file contents');
 ```

@@ -47,4 +47,9 @@ export class Bunny extends HttpBase {
       null,
     );
   }
+
+  async hardUpdate(filePath: string, fileContents: string): Promise<void> {
+    await this.storage.update(filePath, fileContents);
+    await this.purge(filePath);
+  }
 }

@@ -129,4 +129,29 @@ describe('Bunny', () => {
         .catch(err => console.error('ERROR', err));
     });
   });
+
+  describe('hardUpdate', () => {
+    beforeEach(() => {
+      jest
+        .spyOn(classUnderTest.storage, 'update')
+        .mockReturnValueOnce(Promise.resolve({}));
+
+      jest
+        .spyOn(classUnderTest, 'purge')
+        .mockReturnValueOnce(Promise.resolve({}));
+    });
+
+    it('should update and then purge file', done => {
+      const fullPath = 'myzone/somepath/afile.js';
+      const fileContents = 'some contents';
+      classUnderTest.hardUpdate(fullPath, fileContents).then(() => {
+        expect(classUnderTest.storage.update).toHaveBeenCalledWith(
+          fullPath,
+          fileContents,
+        );
+        expect(classUnderTest.purge).toHaveBeenCalledWith(fullPath);
+        done();
+      });
+    });
+  });
 });
