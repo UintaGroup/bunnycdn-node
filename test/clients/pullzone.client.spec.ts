@@ -25,11 +25,10 @@ describe('PullzoneClient', () => {
   });
 
   describe('loadFreeCertificate', () => {
-    beforeEach(() => {
+    beforeEach(() =>
       jest
         .spyOn(axios, 'get')
-        .mockReturnValueOnce(Promise.resolve({ data: {} }));
-    });
+        .mockReturnValueOnce(Promise.resolve({ data: {} })));
 
     it('should GET all pullzones', done => {
       classUnderTest.get().then(() => {
@@ -61,9 +60,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('create', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource with client', done => {
       const pullZone = new PullZone('', '');
@@ -79,9 +77,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('update', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource with client', done => {
       const pullZoneId = 1;
@@ -119,9 +116,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('setForceSSL', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource with forceSSL true by default', done => {
       const pullZoneId = 1;
@@ -159,9 +155,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('addCertificate', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource', done => {
       const pullZoneId = 1;
@@ -187,9 +182,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('addBlockedIP', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource', done => {
       const pullZoneId = 1;
@@ -209,9 +203,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('removeBlockedIP', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource', done => {
       const pullZoneId = 1;
@@ -231,11 +224,10 @@ describe('PullzoneClient', () => {
   });
 
   describe('loadFreeCertificate', () => {
-    beforeEach(() => {
+    beforeEach(() =>
       jest
         .spyOn(axios, 'get')
-        .mockReturnValueOnce(Promise.resolve({ data: {} }));
-    });
+        .mockReturnValueOnce(Promise.resolve({ data: {} })));
 
     it('should GET resource with client', done => {
       const hostName = 'www.google.com';
@@ -250,9 +242,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('deleteHostname', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'delete').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'delete').mockReturnValueOnce(Promise.resolve({})));
 
     it('should DELETE resource with client', done => {
       const pullZoneId = 1;
@@ -270,9 +261,8 @@ describe('PullzoneClient', () => {
   });
 
   describe('purge', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST resource with client', done => {
       const pullZoneId = 1;
