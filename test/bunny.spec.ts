@@ -13,9 +13,7 @@ describe('Bunny', () => {
     headers: jasmine.any(Object),
   });
 
-  beforeEach(() => {
-    classUnderTest = new Bunny(axios);
-  });
+  beforeEach(() => (classUnderTest = new Bunny(axios)));
 
   it('should initialize', () => {
     expect(classUnderTest).toBeDefined();
@@ -44,12 +42,12 @@ describe('Bunny', () => {
     expect(bunny.storage['httpClient']).toEqual(someHttpClient);
     expect(bunny.pullZone['httpClient']).toEqual(someHttpClient);
   });
+
   describe('statistics', () => {
-    beforeEach(() => {
+    beforeEach(() =>
       jest
         .spyOn(axios, 'get')
-        .mockReturnValueOnce(Promise.resolve({ data: {} }));
-    });
+        .mockReturnValueOnce(Promise.resolve({ data: {} })));
 
     it('should GET resource with client', done => {
       classUnderTest.statistics().then(() => {
@@ -70,11 +68,10 @@ describe('Bunny', () => {
   });
 
   describe('billing', () => {
-    beforeEach(() => {
+    beforeEach(() =>
       jest
         .spyOn(axios, 'get')
-        .mockReturnValueOnce(Promise.resolve({ data: {} }));
-    });
+        .mockReturnValueOnce(Promise.resolve({ data: {} })));
 
     it('should GET resource with client', done => {
       classUnderTest.billing().then(() => {
@@ -114,9 +111,8 @@ describe('Bunny', () => {
   });
 
   describe('purge', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'post').mockReturnValueOnce(Promise.resolve({})));
 
     it('should POST url', done => {
       const url = 'https://www.google.com';

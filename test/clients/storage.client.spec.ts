@@ -17,20 +17,17 @@ describe('StorageClient', () => {
     return expect.objectContaining({ ...baseConfig, ...additionalConfig });
   };
 
-  beforeEach(() => {
-    classUnderTest = new StorageClient(axios);
-  });
+  beforeEach(() => (classUnderTest = new StorageClient(axios)));
 
   it('should initialize', () => {
     expect(classUnderTest).toBeDefined();
   });
 
   describe('get', () => {
-    beforeEach(() => {
+    beforeEach(() =>
       jest
         .spyOn(axios, 'get')
-        .mockReturnValueOnce(Promise.resolve({ data: {} }));
-    });
+        .mockReturnValueOnce(Promise.resolve({ data: {} })));
 
     it('should GET resource with client at path', done => {
       const fullPath = 'myzone/somepath';
@@ -46,11 +43,10 @@ describe('StorageClient', () => {
   });
 
   describe('getFile', () => {
-    beforeEach(() => {
+    beforeEach(() =>
       jest
         .spyOn(axios, 'get')
-        .mockReturnValueOnce(Promise.resolve('file contents'));
-    });
+        .mockReturnValueOnce(Promise.resolve('file contents')));
 
     it('should GET resource with client at path', done => {
       const fullPath = 'myzone/somepath/afile.js';
@@ -63,9 +59,8 @@ describe('StorageClient', () => {
   });
 
   describe('update', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'put').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'put').mockReturnValueOnce(Promise.resolve({})));
 
     it('should PUT resource contents with client', done => {
       const fullPath = 'myzone/somepath/afile.js';
@@ -82,9 +77,8 @@ describe('StorageClient', () => {
   });
 
   describe('delete', () => {
-    beforeEach(() => {
-      jest.spyOn(axios, 'delete').mockReturnValueOnce(Promise.resolve({}));
-    });
+    beforeEach(() =>
+      jest.spyOn(axios, 'delete').mockReturnValueOnce(Promise.resolve({})));
 
     it('should DELETE resource', done => {
       const fullPath = 'myzone/somepath/afile.js';
