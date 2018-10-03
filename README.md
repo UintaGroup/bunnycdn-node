@@ -70,5 +70,5 @@ bunny.purge('http://my-zone/mypath/filetopurge.css');
 
 HardUpdate File (Update and Purge)
 ``` javascript
-bunny.hardUpdate('http://my-zone/mypath/filetopurge.css', 'file contents');
+bunny.hardUpdate('https://mydomain.com','myStorage', 'myPath', 'fileName.css', 'new file contents');
 ```

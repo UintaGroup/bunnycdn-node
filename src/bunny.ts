@@ -42,14 +42,20 @@ export class Bunny extends HttpBase {
   }
 
   async purge(url: string): Promise<void> {
-    await super.post(
-      `${Resource.PullZone}/${Endpoint.Purge}?${Parameter.URL}=${url}`,
-      null,
-    );
+    await super.post(`${Endpoint.Purge}?${Parameter.URL}=${url}`, null);
   }
 
-  async hardUpdate(filePath: string, fileContents: string): Promise<void> {
-    await this.storage.update(filePath, fileContents);
-    await this.purge(filePath);
+  async hardUpdate(
+    host: string,
+    storageZone: string,
+    path: string,
+    fileName: string,
+    fileContents: string,
+  ): Promise<void> {
+    await this.storage.update(
+      `${storageZone}/${path}/${fileName}`,
+      fileContents,
+    );
+    await this.purge(`${host}/${path}/${fileName}`);
   }
 }

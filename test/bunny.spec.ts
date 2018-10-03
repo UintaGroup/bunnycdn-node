@@ -120,7 +120,7 @@ describe('Bunny', () => {
         .purge(url)
         .then(() => {
           expect(axios.post).toHaveBeenCalledWith(
-            `pullzone/purge?url=${url}`,
+            `purge?url=${url}`,
             null,
             validateConfig,
           );
@@ -142,16 +142,23 @@ describe('Bunny', () => {
     });
 
     it('should update and then purge file', done => {
-      const fullPath = 'myzone/somepath/afile.js';
+      const host = 'https://www.myhost.com';
+      const path = 'somePath';
+      const storageZone = 'myzone';
+      const fileName = 'afile.js';
       const fileContents = 'some contents';
-      classUnderTest.hardUpdate(fullPath, fileContents).then(() => {
-        expect(classUnderTest.storage.update).toHaveBeenCalledWith(
-          fullPath,
-          fileContents,
-        );
-        expect(classUnderTest.purge).toHaveBeenCalledWith(fullPath);
-        done();
-      });
+      classUnderTest
+        .hardUpdate(host, storageZone, path, fileName, fileContents)
+        .then(() => {
+          expect(classUnderTest.storage.update).toHaveBeenCalledWith(
+            'myzone/somePath/afile.js',
+            fileContents,
+          );
+          expect(classUnderTest.purge).toHaveBeenCalledWith(
+            'https://www.myhost.com/somePath/afile.js',
+          );
+          done();
+        });
     });
   });
 });
