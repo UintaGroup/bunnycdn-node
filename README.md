@@ -4,9 +4,7 @@
 [![Build Status](https://travis-ci.org/UintaGroup/bunnycdn-node.svg?branch=master)](https://travis-ci.org/UintaGroup/bunnycdn-node)
 [![CodeFactor](https://www.codefactor.io/repository/github/uintagroup/bunnycdn-node/badge)](https://www.codefactor.io/repository/github/uintagroup/bunnycdn-node)
 
-BunnyCDN node. 
-
-A simple utility for working with bunnycdn's APIs
+BunnyCDN node bindings
 
 This was initially planned to be a simple utility for us to use to update js files on Bunny's storage platform and then bust their cache after a deployment. 
 
