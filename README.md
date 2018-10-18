@@ -2,6 +2,7 @@
 [![CircleCI](https://circleci.com/gh/UintaGroup/bunnycdn-node.svg?style=svg)](https://circleci.com/gh/UintaGroup/bunnycdn-node)
 [![Coverage Status](https://coveralls.io/repos/github/UintaGroup/bunnycdn-node/badge.svg?branch=master)](https://coveralls.io/github/UintaGroup/bunnycdn-node?branch=master)
 [![Build Status](https://travis-ci.org/UintaGroup/bunnycdn-node.svg?branch=master)](https://travis-ci.org/UintaGroup/bunnycdn-node)
+[![CodeFactor](https://www.codefactor.io/repository/github/uintagroup/bunnycdn-node/badge)](https://www.codefactor.io/repository/github/uintagroup/bunnycdn-node)
 
 BunnyCDN node. 
 
