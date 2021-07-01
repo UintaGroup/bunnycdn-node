@@ -109,7 +109,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "class-transformer": "^0.1.9",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.12"
   },
   "repository": "git@github.com:UintaGroup/bunnycdn-node.git",
