@@ -23,6 +23,7 @@ export class StorageClient extends HttpBase {
   async update(filePath: string, fileContents: string): Promise<string> {
     const response: AxiosResponse = await super.put(filePath, fileContents, {
       header: { 'Content-Type': 'text/plain' },
+      maxContentLength: 1073741824
     });
     return response.data;
   }
